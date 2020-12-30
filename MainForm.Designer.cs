@@ -203,6 +203,7 @@ namespace TCPmon
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
             this.logToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.logToolStripMenuItem.Text = "&Log";
+            this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click_1);
             // 
             // helpToolStripMenuItem
             // 

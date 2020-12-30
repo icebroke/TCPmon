@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,6 +22,7 @@ namespace TCPmon
 
         private ProcProperties properties_form;
         private About about_form;
+        string file_path = @".\\log.txt";
         public MainForm()
         {
             InitializeComponent();
@@ -84,6 +87,8 @@ namespace TCPmon
 
                 lCountTCP.Text = rows + " active connections";
                 progressBar1.Visible = false;
+
+                tcp_log();
             }
             catch (Exception e)
             {
@@ -122,6 +127,35 @@ namespace TCPmon
                     MessageBox.Show(ex.ToString());
                 }
             }
+        }
+
+        public void tcp_log() 
+        {
+            // Create log.txt file at execution app folder
+            try
+            {
+                dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithAutoHeaderText;
+                dataGridView1.SelectAll();
+                Clipboard.SetDataObject(dataGridView1.GetClipboardContent());
+
+                if (!File.Exists(file_path)) // Create file if not exist
+                {
+                    File.WriteAllText(file_path, DateTime.Now.ToString() + Environment.NewLine + Clipboard.GetText(TextDataFormat.Text) + Environment.NewLine);
+                }
+
+                // TODO: Clear log content after 30 days
+
+                File.AppendAllText(file_path, DateTime.Now.ToString() + Environment.NewLine + Clipboard.GetText(TextDataFormat.Text) + Environment.NewLine);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        private void logToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Process.Start("notepad.exe", file_path); // Open text file with windows default text editor
         }
     }
 }
