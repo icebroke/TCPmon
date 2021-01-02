@@ -12,6 +12,8 @@ namespace TCPmon
 {
     public partial class ProcProperties : Form
     {
+        private int pid = 0;
+        private string processName = "";
         public ProcProperties()
         {
             InitializeComponent();
@@ -19,6 +21,8 @@ namespace TCPmon
 
         public void process_properties(int int_pid)
         {
+            pid = int_pid;
+            processName = Process.GetProcessById(int_pid).ProcessName; // Get the process name from pid
             try
             {
                 string file_path = Process.GetProcessById(int_pid).MainModule.FileName;
@@ -51,6 +55,28 @@ namespace TCPmon
         private void btnOK_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Kill '"+processName+"' process ?", "End process", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    Process[] proc = Process.GetProcessesByName(processName);
+                    proc[0].Kill();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+            
         }
     }
 }

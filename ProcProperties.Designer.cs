@@ -47,6 +47,7 @@ namespace TCPmon
             this.tbModified = new System.Windows.Forms.TextBox();
             this.lAccessed = new System.Windows.Forms.Label();
             this.tbAccessed = new System.Windows.Forms.TextBox();
+            this.btnEnd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lDescription
@@ -96,12 +97,12 @@ namespace TCPmon
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(168, 460);
+            this.btnOK.Location = new System.Drawing.Point(60, 457);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(94, 29);
             this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "Close";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -204,11 +205,22 @@ namespace TCPmon
             this.tbAccessed.Size = new System.Drawing.Size(306, 27);
             this.tbAccessed.TabIndex = 16;
             // 
+            // btnEnd
+            // 
+            this.btnEnd.Location = new System.Drawing.Point(264, 457);
+            this.btnEnd.Name = "btnEnd";
+            this.btnEnd.Size = new System.Drawing.Size(123, 29);
+            this.btnEnd.TabIndex = 17;
+            this.btnEnd.Text = "End process";
+            this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
+            // 
             // ProcProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 528);
+            this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.tbAccessed);
             this.Controls.Add(this.lAccessed);
             this.Controls.Add(this.tbModified);
@@ -255,5 +267,6 @@ namespace TCPmon
         private System.Windows.Forms.TextBox tbModified;
         private System.Windows.Forms.Label lAccessed;
         private System.Windows.Forms.TextBox tbAccessed;
+        private System.Windows.Forms.Button btnEnd;
     }
 }
