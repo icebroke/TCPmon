@@ -6,4 +6,4 @@ Created using .Net Core 3.1. This application developed for learning purposes.
 ![alt text](https://github.com/icebroke/TCPmon/blob/main/Resources/ProcProperties.png?raw=true)
 
 ## TODO :
-- Add option to end the selected task.
+- Add process tree view.
