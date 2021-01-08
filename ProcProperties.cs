@@ -43,8 +43,6 @@ namespace TCPmon
                 tbCreated.Text = file_created.ToString();
                 tbModified.Text = file_modified.ToString();
                 tbAccessed.Text = file_accessed.ToString();
-
-                this.Show();
             }
             catch (IOException e)
             {
@@ -57,9 +55,9 @@ namespace TCPmon
             this.Close();
         }
 
-        private void btnEnd_Click(object sender, EventArgs e)
+        private void endProcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Kill '"+processName+"' process ?", "End process", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Kill '" + processName + "' process ?", "End process", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 try
@@ -76,7 +74,28 @@ namespace TCPmon
             {
                 //do something else
             }
-            
         }
+
+        //private void btnEnd_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult dialogResult = MessageBox.Show("Kill '"+processName+"' process ?", "End process", MessageBoxButtons.YesNo);
+        //    if (dialogResult == DialogResult.Yes)
+        //    {
+        //        try
+        //        {
+        //            Process[] proc = Process.GetProcessesByName(processName);
+        //            proc[0].Kill();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.ToString());
+        //        }
+        //    }
+        //    else if (dialogResult == DialogResult.No)
+        //    {
+        //        //do something else
+        //    }
+
+        //}
     }
 }

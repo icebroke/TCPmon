@@ -58,6 +58,7 @@ namespace TCPmon
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lCountTCP = new System.Windows.Forms.Label();
+            this.procTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -193,7 +194,8 @@ namespace TCPmon
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logToolStripMenuItem});
+            this.logToolStripMenuItem,
+            this.procTreeToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.toolsToolStripMenuItem.Text = "&Tools";
@@ -201,7 +203,7 @@ namespace TCPmon
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.logToolStripMenuItem.Text = "&Log";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click_1);
             // 
@@ -296,6 +298,13 @@ namespace TCPmon
             this.lCountTCP.Size = new System.Drawing.Size(0, 20);
             this.lCountTCP.TabIndex = 4;
             // 
+            // procTreeToolStripMenuItem
+            // 
+            this.procTreeToolStripMenuItem.Name = "procTreeToolStripMenuItem";
+            this.procTreeToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.procTreeToolStripMenuItem.Text = "Process tree";
+            //this.procTreeToolStripMenuItem.Click += new System.EventHandler(this.procTreeToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -351,6 +360,7 @@ namespace TCPmon
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lCountTCP;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem procTreeToolStripMenuItem;
     }
 }
 

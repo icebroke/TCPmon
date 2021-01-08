@@ -47,7 +47,10 @@ namespace TCPmon
             this.tbModified = new System.Windows.Forms.TextBox();
             this.lAccessed = new System.Windows.Forms.Label();
             this.tbAccessed = new System.Windows.Forms.TextBox();
-            this.btnEnd = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.endProcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lDescription
@@ -97,12 +100,12 @@ namespace TCPmon
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(60, 457);
+            this.btnOK.Location = new System.Drawing.Point(167, 461);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(94, 29);
             this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "Close";
+            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -205,22 +208,38 @@ namespace TCPmon
             this.tbAccessed.Size = new System.Drawing.Size(306, 27);
             this.tbAccessed.TabIndex = 16;
             // 
-            // btnEnd
+            // menuStrip1
             // 
-            this.btnEnd.Location = new System.Drawing.Point(264, 457);
-            this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(123, 29);
-            this.btnEnd.TabIndex = 17;
-            this.btnEnd.Text = "End process";
-            this.btnEnd.UseVisualStyleBackColor = true;
-            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(428, 28);
+            this.menuStrip1.TabIndex = 17;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.endProcToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // endProcToolStripMenuItem
+            // 
+            this.endProcToolStripMenuItem.Name = "endProcToolStripMenuItem";
+            this.endProcToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.endProcToolStripMenuItem.Text = "E&nd process";
+            this.endProcToolStripMenuItem.Click += new System.EventHandler(this.endProcToolStripMenuItem_Click);
             // 
             // ProcProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(428, 528);
-            this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.tbAccessed);
             this.Controls.Add(this.lAccessed);
             this.Controls.Add(this.tbModified);
@@ -238,11 +257,16 @@ namespace TCPmon
             this.Controls.Add(this.lSize);
             this.Controls.Add(this.lLocation);
             this.Controls.Add(this.lDescription);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProcProperties";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,6 +291,8 @@ namespace TCPmon
         private System.Windows.Forms.TextBox tbModified;
         private System.Windows.Forms.Label lAccessed;
         private System.Windows.Forms.TextBox tbAccessed;
-        private System.Windows.Forms.Button btnEnd;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem endProcToolStripMenuItem;
     }
 }

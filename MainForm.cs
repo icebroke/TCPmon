@@ -121,6 +121,7 @@ namespace TCPmon
 
                     properties_form = new ProcProperties();
                     properties_form.process_properties(int_pid);
+                    properties_form.ShowDialog();
                 }
                 catch (Exception ex)
                 {
@@ -145,7 +146,7 @@ namespace TCPmon
 
                 // TODO: Clear log content after 30 days
 
-                File.AppendAllText(file_path, DateTime.Now.ToString() + Environment.NewLine + Clipboard.GetText(TextDataFormat.Text) + Environment.NewLine);
+                File.AppendAllText(file_path, Environment.NewLine + DateTime.Now.ToString() + Environment.NewLine + Clipboard.GetText(TextDataFormat.Text) + Environment.NewLine);
             }
             catch (Exception e)
             {
@@ -157,5 +158,10 @@ namespace TCPmon
         {
             Process.Start("notepad.exe", file_path); // Open text file with windows default text editor
         }
+
+        //private void procTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
