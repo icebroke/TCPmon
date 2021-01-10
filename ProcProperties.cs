@@ -12,8 +12,10 @@ namespace TCPmon
 {
     public partial class ProcProperties : Form
     {
-        private int pid = 0;
-        private string processName = "";
+        private int pid;
+        private string processName;
+        string file_path;
+        string file_description;
         public ProcProperties()
         {
             InitializeComponent();
@@ -25,8 +27,8 @@ namespace TCPmon
             processName = Process.GetProcessById(int_pid).ProcessName; // Get the process name from pid
             try
             {
-                string file_path = Process.GetProcessById(int_pid).MainModule.FileName;
-                string file_description = Path.GetFileName(file_path);
+                file_path = Process.GetProcessById(int_pid).MainModule.FileName;
+                file_description = Path.GetFileName(file_path);
 
                 FileInfo fi = new FileInfo(file_path);
 
@@ -69,6 +71,8 @@ namespace TCPmon
                 {
                     MessageBox.Show(ex.ToString());
                 }
+
+                this.Close();
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -76,26 +80,18 @@ namespace TCPmon
             }
         }
 
-        //private void btnEnd_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult dialogResult = MessageBox.Show("Kill '"+processName+"' process ?", "End process", MessageBoxButtons.YesNo);
-        //    if (dialogResult == DialogResult.Yes)
-        //    {
-        //        try
-        //        {
-        //            Process[] proc = Process.GetProcessesByName(processName);
-        //            proc[0].Kill();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.ToString());
-        //        }
-        //    }
-        //    else if (dialogResult == DialogResult.No)
-        //    {
-        //        //do something else
-        //    }
-
-        //}
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+            if (File.Exists(file_path))
+            {
+                filePath = Path.GetFullPath(file_path);
+                Process.Start(file_description, string.Format("/select,\"{0}\"",filePath));
+            }
+            else
+            {
+                MessageBox.Show(string.Format("{0} The file does not exist!", file_path));
+            }
+        }
     }
 }

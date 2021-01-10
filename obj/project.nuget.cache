@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "f+Iydxo7z0kBo7or9yoyXRS5m7dzutQ+z5j0cpekAU59lQSj3Sza4g8fTBT+nFcGtxMPNQ6QuwO1heiRgwZrgw==",
+  "dgSpecHash": "gG/F30SxU3DK9a0KS1tna+BMdhU7kMy3xjQvImGZ0NWXDHS96s1Nv1rAjhRLVmMNTPfeDlXxibbc0Y9Dz88uQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Acer\\Documents\\PROJECTS\\WORKSPACE\\TCPmon\\TCPmon.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\system.management\\5.0.0\\system.management.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

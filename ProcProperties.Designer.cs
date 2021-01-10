@@ -50,6 +50,8 @@ namespace TCPmon
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.endProcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -222,6 +224,8 @@ namespace TCPmon
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openFileToolStripMenuItem,
+            this.toolStripSeparator1,
             this.endProcToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
@@ -230,9 +234,21 @@ namespace TCPmon
             // endProcToolStripMenuItem
             // 
             this.endProcToolStripMenuItem.Name = "endProcToolStripMenuItem";
-            this.endProcToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.endProcToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.endProcToolStripMenuItem.Text = "E&nd process";
             this.endProcToolStripMenuItem.Click += new System.EventHandler(this.endProcToolStripMenuItem_Click);
+            // 
+            // openFileToolStripMenuItem
+            // 
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.openFileToolStripMenuItem.Text = "O&pen file location";
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(208, 6);
             // 
             // ProcProperties
             // 
@@ -264,7 +280,6 @@ namespace TCPmon
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProcProperties";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.TopMost = true;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -294,5 +309,7 @@ namespace TCPmon
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem endProcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

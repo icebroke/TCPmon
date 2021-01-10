@@ -22,6 +22,7 @@ namespace TCPmon
 
         private ProcProperties properties_form;
         private About about_form;
+        private ProcTree proc_tree;
         string file_path = @".\\log.txt";
         public MainForm()
         {
@@ -159,9 +160,10 @@ namespace TCPmon
             Process.Start("notepad.exe", file_path); // Open text file with windows default text editor
         }
 
-        //private void procTreeToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-
-        //}
+        private void procTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            proc_tree = new ProcTree();
+            proc_tree.ShowDialog();
+        }
     }
 }

@@ -52,3 +52,15 @@ C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\TCPmon
 C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\TCPmon.dll
 C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\TCPmon.pdb
 C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\obj\Debug\netcoreapp3.1\TCPmon.genruntimeconfig.cache
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\System.Management.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\obj\Debug\netcoreapp3.1\TCPmon.ProcTree.resources
+C:\Users\Acer\Documents\PROJECTS\WORKSPACE\TCPmon\obj\Debug\netcoreapp3.1\TCPmon.csproj.CopyComplete
