@@ -5,5 +5,3 @@ Created using .Net Core 3.1. This application developed for learning purposes.
 ## Screenshot:
 ![alt text](https://github.com/icebroke/TCPmon/blob/main/Resources/ProcProperties.png?raw=true)
 
-## TODO :
-- Add process tree view.
