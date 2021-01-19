@@ -23,19 +23,20 @@ namespace TCPmon
         private ProcProperties properties_form;
         private About about_form;
         private ProcTree proc_tree;
-        string file_path = @".\\log.txt";
+        string log_path = @".\\log.txt";
+        string list_path = @".\\procList.txt";
         public MainForm()
         {
             InitializeComponent();
-            fill_dataGrid();
+            run_cmd();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            fill_dataGrid();
+            run_cmd();
         }
 
-        public void fill_dataGrid()
+        public void run_cmd()
         {
             try
             {
@@ -52,44 +53,93 @@ namespace TCPmon
                 p.StartInfo = psi;
                 p.Start();
 
-                while (!p.StandardOutput.EndOfStream)
-                {
-                    string[] values = p.StandardOutput.ReadLine().Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                string output = p.StandardOutput.ReadToEnd();
+                p.WaitForExit();
+                p.Close();
 
-                    if (values.Length == 5)
-                    {
-                        dataGridView1.Rows.Add(values);
-                    }
+                if (!File.Exists(list_path))
+                {
+                    File.WriteAllText(list_path, output);
                 }
-
-                rows = dataGridView1.Rows.Count;
-
-                progressBar1.Visible = true;
-                progressBar1.Minimum = 1;
-                progressBar1.Maximum = rows;
-                progressBar1.Value = 1;
-                progressBar1.Step = 1;
-
-                for (int i = 0; i < rows; i++)
+                else
                 {
-                    if (dataGridView1.Rows[i].Cells[3].Value.ToString() == "ESTABLISHED")
-                    {
-                        dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Green;
-                    }
+                    File.WriteAllText(list_path, output);
+                }
+                
+                readProcList();
+                tcp_log();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
 
+        public void readProcList()
+        {
+            string line = null;
+            string[] values = null;
+            processName = null;
+            rows = 0;
+
+            StreamReader sr = new StreamReader(list_path);
+            while ((line = sr.ReadLine()) != null)
+            {
+                values = line.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+
+                if (values.Length == 5)
+                {
+                    if (values[4] != "0")
+                        dataGridView1.Rows.Add(values);
+                }
+            }
+            sr.Close();
+
+            rows = dataGridView1.Rows.Count;
+
+            for (int i = 0; i < rows; i++)
+            {
+                try
+                {
                     PID = dataGridView1.Rows[i].Cells[4].Value.ToString();
                     int.TryParse(PID, out int_pid); //Parse string to int
                     processName = Process.GetProcessById(int_pid).ProcessName; // Get the process name from pid
-
+                    if (dataGridView1.Rows[i].Cells[3].Value.ToString() == "ESTABLISHED") 
+                    { 
+                        dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.Green; 
+                    }
                     dataGridView1.Rows[i].Cells[5].Value = processName;
+                }
+                catch (Exception e)
+                {
+                    dataGridView1.Rows.RemoveAt(i);
+                    rows = rows - 1;
+                }
+                
+            }
 
-                    progressBar1.PerformStep();
+            lCountTCP.Text = rows + " active connections";
+        }
+
+        public void tcp_log()
+        {
+            // Create log.txt file at execution app folder
+            try
+            {
+                dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithAutoHeaderText;
+                dataGridView1.SelectAll();
+                Clipboard.SetDataObject(dataGridView1.GetClipboardContent());
+
+                if (!File.Exists(log_path)) // Create file if not exist
+                {
+                    File.WriteAllText(log_path, DateTime.Now.ToString() + Environment.NewLine + Clipboard.GetText(TextDataFormat.Text) + Environment.NewLine);
                 }
 
-                lCountTCP.Text = rows + " active connections";
-                progressBar1.Visible = false;
+                // TODO: Clear log content after 30 days
 
-                tcp_log();
+                File.AppendAllText(log_path, Environment.NewLine + DateTime.Now.ToString() + Environment.NewLine + Clipboard.GetText(TextDataFormat.Text) + Environment.NewLine);
+
+                dataGridView1.ClearSelection();
             }
             catch (Exception e)
             {
@@ -131,33 +181,9 @@ namespace TCPmon
             }
         }
 
-        public void tcp_log() 
-        {
-            // Create log.txt file at execution app folder
-            try
-            {
-                dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithAutoHeaderText;
-                dataGridView1.SelectAll();
-                Clipboard.SetDataObject(dataGridView1.GetClipboardContent());
-
-                if (!File.Exists(file_path)) // Create file if not exist
-                {
-                    File.WriteAllText(file_path, DateTime.Now.ToString() + Environment.NewLine + Clipboard.GetText(TextDataFormat.Text) + Environment.NewLine);
-                }
-
-                // TODO: Clear log content after 30 days
-
-                File.AppendAllText(file_path, Environment.NewLine + DateTime.Now.ToString() + Environment.NewLine + Clipboard.GetText(TextDataFormat.Text) + Environment.NewLine);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-        }
-
         private void logToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Process.Start("notepad.exe", file_path); // Open text file with windows default text editor
+            Process.Start("notepad.exe", log_path); // Open text file with windows default text editor
         }
 
         private void procTreeToolStripMenuItem_Click(object sender, EventArgs e)

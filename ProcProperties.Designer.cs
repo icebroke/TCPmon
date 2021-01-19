@@ -49,9 +49,9 @@ namespace TCPmon
             this.tbAccessed = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.endProcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.endProcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +107,7 @@ namespace TCPmon
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(94, 29);
             this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "Close";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -231,13 +231,6 @@ namespace TCPmon
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
-            // endProcToolStripMenuItem
-            // 
-            this.endProcToolStripMenuItem.Name = "endProcToolStripMenuItem";
-            this.endProcToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
-            this.endProcToolStripMenuItem.Text = "E&nd process";
-            this.endProcToolStripMenuItem.Click += new System.EventHandler(this.endProcToolStripMenuItem_Click);
-            // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
@@ -249,6 +242,13 @@ namespace TCPmon
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(208, 6);
+            // 
+            // endProcToolStripMenuItem
+            // 
+            this.endProcToolStripMenuItem.Name = "endProcToolStripMenuItem";
+            this.endProcToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.endProcToolStripMenuItem.Text = "E&nd process";
+            this.endProcToolStripMenuItem.Click += new System.EventHandler(this.endProcToolStripMenuItem_Click);
             // 
             // ProcProperties
             // 

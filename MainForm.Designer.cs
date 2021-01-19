@@ -57,7 +57,6 @@ namespace TCPmon
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lCountTCP = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -204,19 +203,19 @@ namespace TCPmon
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
-            this.logToolStripMenuItem.Text = "&Log";
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.logToolStripMenuItem.Text = "Open log file";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(168, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(176, 6);
             // 
             // procTreeToolStripMenuItem
             // 
             this.procTreeToolStripMenuItem.Name = "procTreeToolStripMenuItem";
-            this.procTreeToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.procTreeToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.procTreeToolStripMenuItem.Text = "Process tree";
             this.procTreeToolStripMenuItem.Click += new System.EventHandler(this.procTreeToolStripMenuItem_Click);
             // 
@@ -231,8 +230,8 @@ namespace TCPmon
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
-            this.aboutToolStripMenuItem.Text = "&About...";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.aboutToolStripMenuItem.Text = "&About TCPmon";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
             // undoToolStripMenuItem
@@ -289,14 +288,6 @@ namespace TCPmon
             this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(910, 535);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(125, 18);
-            this.progressBar1.TabIndex = 3;
-            // 
             // lCountTCP
             // 
             this.lCountTCP.AutoSize = true;
@@ -313,7 +304,6 @@ namespace TCPmon
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1053, 570);
             this.Controls.Add(this.lCountTCP);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -356,7 +346,6 @@ namespace TCPmon
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lCountTCP;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem procTreeToolStripMenuItem;
