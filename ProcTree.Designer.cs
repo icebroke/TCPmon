@@ -57,7 +57,7 @@ namespace TCPmon
             this.Controls.Add(this.treeView);
             this.Name = "ProcTree";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Process Tree";
+            this.Text = "TCP connected processes";
             this.Load += new System.EventHandler(this.ProcTree_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

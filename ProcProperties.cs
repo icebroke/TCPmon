@@ -12,6 +12,7 @@ namespace TCPmon
 {
     public partial class ProcProperties : Form
     {
+        private MainForm refreshGrid;
         private int pid;
         private string processName;
         string file_path;
@@ -59,7 +60,7 @@ namespace TCPmon
 
         private void endProcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Kill '" + processName + "' process ?", "End process", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Kill '" + processName + "' process ?" + "\n\nWARNING: Kill a process with this method can cause error.", "End process", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 try
@@ -71,6 +72,8 @@ namespace TCPmon
                 {
                     MessageBox.Show(ex.ToString());
                 }
+                refreshGrid = new MainForm();
+                refreshGrid.run_cmd();
 
                 this.Close();
             }
